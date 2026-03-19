@@ -1,0 +1,102 @@
+{
+  "site": {
+    "name": "About Contact",
+    "tagline": "Simple, repeatable pages for small sites"
+  },
+  "about": {
+    "title": "About",
+    "kicker": "Built for clarity, consistency, and long-term ownership.",
+    "headline": "A lightweight framework for presenting who you are and how you work.",
+    "lede": "This section is meant to be reused across projects with only a few edits. It highlights the mission, the work you do, and the values you want to keep consistent.",
+    "badges": [
+      "Intentionally simple",
+      "Operationally boring",
+      "Designed to last"
+    ],
+    "mission": {
+      "title": "Mission",
+      "body": "Deliver reliable, maintainable work that keeps priorities clear and avoids unnecessary complexity."
+    },
+    "vision": {
+      "title": "Vision",
+      "body": "Build relationships around trust, clarity, and outcomes that can be supported long after launch."
+    },
+    "highlights": [
+      {
+        "title": "Rails-first approach",
+        "body": "Keep the stack focused so the project stays approachable and easy to maintain."
+      },
+      {
+        "title": "Practical delivery",
+        "body": "Define scope, ship iteratively, and avoid over-engineering."
+      },
+      {
+        "title": "Long-term support",
+        "body": "Make decisions that keep the system stable and easy to evolve."
+      }
+    ],
+    "sections": [
+      {
+        "title": "What we do",
+        "body": "Build and support web applications, internal tools, and documentation systems."
+      },
+      {
+        "title": "How we work",
+        "body": "Start with clear requirements, keep communication tight, and document decisions."
+      },
+      {
+        "title": "What to expect",
+        "body": "A straightforward process, predictable delivery, and a clean handoff."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "Send a note and we will respond as soon as possible.",
+    "details": [
+      {
+        "label": "Email",
+        "value": "hello@example.com"
+      },
+      {
+        "label": "Location",
+        "value": "Los Angeles, CA"
+      },
+      {
+        "label": "Hours",
+        "value": "Monday to Friday, 9am to 5pm"
+      }
+    ],
+    "social": [
+      {
+        "label": "Instagram",
+        "url": "https://instagram.com/example"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://linkedin.com/company/example"
+      }
+    ],
+    "form": {
+      "submit_label": "Send Message"
+    }
+  },
+  "faq": {
+    "title": "FAQ",
+    "intro": "Answers to the most common questions.",
+    "items": [
+      {
+        "question": "How quickly do you respond?",
+        "answer": "Typically within 1 to 2 business days."
+      },
+      {
+        "question": "What do you need to get started?",
+        "answer": "A clear scope, timeline expectations, and access to any existing assets."
+      },
+      {
+        "question": "Do you handle ongoing support?",
+        "answer": "Yes, ongoing support can be scoped as part of the project."
+      }
+    ]
+  }
+}

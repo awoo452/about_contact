@@ -1,0 +1,56 @@
+<% content_for :title, @page_title %>
+
+<section class="about-page">
+  <h1><%= @about["title"] %></h1>
+  <p class="about-kicker"><%= @about["kicker"] %></p>
+  <h2><%= @about["headline"] %></h2>
+  <p><%= @about["lede"] %></p>
+
+  <% if @about["badges"]&.any? %>
+    <ul class="about-badges">
+      <% @about["badges"].each do |badge| %>
+        <li><%= badge %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="about-mission">
+    <h2><%= @about.dig("mission", "title") %></h2>
+    <p><%= @about.dig("mission", "body") %></p>
+  </div>
+
+  <div class="about-vision">
+    <h2><%= @about.dig("vision", "title") %></h2>
+    <p><%= @about.dig("vision", "body") %></p>
+  </div>
+
+  <% if @about["highlights"]&.any? %>
+    <h2>Highlights</h2>
+    <ul class="about-highlights">
+      <% @about["highlights"].each do |highlight| %>
+        <li>
+          <strong><%= highlight["title"] %></strong>
+          <p><%= highlight["body"] %></p>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <% if @about["sections"]&.any? %>
+    <h2>More</h2>
+    <ul class="about-sections">
+      <% @about["sections"].each do |section| %>
+        <li>
+          <strong><%= section["title"] %></strong>
+          <p><%= section["body"] %></p>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <nav class="page-nav">
+    <%= link_to "About", "/about" %> |
+    <%= link_to "Contact", "/contact" %> |
+    <%= link_to "FAQ", "/faq" %>
+  </nav>
+</section>

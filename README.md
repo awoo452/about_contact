@@ -1,24 +1,64 @@
-# README
+# About Contact
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails app for standard About, Contact, and FAQ pages with a working email form.
 
-Things you may want to cover:
+## Pages
+- `/` (root) renders About
+- `/about`
+- `/contact`
+- `/faq`
 
-* Ruby version
+## Content
+All copy lives in `config/site_content.json`. Update the JSON and the pages will reflect it.
 
-* System dependencies
+## Setup
+```bash
+bin/setup
+```
 
-* Configuration
+## Run
+```bash
+bin/rails s
+```
 
-* Database creation
+## Contact Form Email Setup
+The contact form sends email via Action Mailer. It will show an error if delivery
+is not configured. At minimum, set `CONTACT_TO_EMAIL`.
 
-* Database initialization
+Required
+- `CONTACT_TO_EMAIL` (destination inbox)
 
-* How to run the test suite
+Optional
+- `CONTACT_FROM_EMAIL` (default `no-reply@example.com`)
+- `CONTACT_SUBJECT_PREFIX` (default `[Contact]`)
 
-* Services (job queues, cache servers, search engines, etc.)
+SMTP (if you want real delivery)
+- `SMTP_ADDRESS`
+- `SMTP_PORT` (default `587`)
+- `SMTP_DOMAIN`
+- `SMTP_USERNAME`
+- `SMTP_PASSWORD`
+- `SMTP_AUTHENTICATION` (default `plain`)
+- `SMTP_ENABLE_STARTTLS_AUTO` (default `true`)
 
-* Deployment instructions
+Example environment setup
+```bash
+export CONTACT_TO_EMAIL="hello@example.com"
+export CONTACT_FROM_EMAIL="no-reply@example.com"
+export CONTACT_SUBJECT_PREFIX="[AboutContact]"
+export SMTP_ADDRESS="smtp.example.com"
+export SMTP_PORT="587"
+export SMTP_DOMAIN="example.com"
+export SMTP_USERNAME="smtp-user"
+export SMTP_PASSWORD="smtp-pass"
+export SMTP_AUTHENTICATION="plain"
+export SMTP_ENABLE_STARTTLS_AUTO="true"
+```
 
-* ...
+## Tests
+```bash
+bin/rails test
+bin/rails test:system
+```
+
+System tests run with `rack_test` for CI compatibility.

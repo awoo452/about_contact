@@ -1,0 +1,23 @@
+<% content_for :title, @page_title %>
+
+<section class="faq-page">
+  <h1><%= @faq["title"] %></h1>
+  <p><%= @faq["intro"] %></p>
+
+  <% if @faq["items"]&.any? %>
+    <ul class="faq-list">
+      <% @faq["items"].each do |item| %>
+        <li>
+          <strong><%= item["question"] %></strong>
+          <p><%= item["answer"] %></p>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <nav class="page-nav">
+    <%= link_to "About", "/about" %> |
+    <%= link_to "Contact", "/contact" %> |
+    <%= link_to "FAQ", "/faq" %>
+  </nav>
+</section>
