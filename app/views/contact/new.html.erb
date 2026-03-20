@@ -1,36 +1,36 @@
 <% content_for :title, @page_title %>
 
-<section class="contact-page">
+<section>
   <h1><%= @contact["title"] %></h1>
   <p><%= @contact["intro"] %></p>
 
   <% if flash[:notice].present? %>
-    <p class="flash flash-notice"><%= flash[:notice] %></p>
+    <p><%= flash[:notice] %></p>
   <% end %>
   <% if flash[:alert].present? %>
-    <p class="flash flash-alert"><%= flash[:alert] %></p>
+    <p><%= flash[:alert] %></p>
   <% end %>
 
   <% if @contact["details"]&.any? %>
-    <ul class="contact-details">
+    <ul>
       <% @contact["details"].each do |detail| %>
         <li><strong><%= detail["label"] %>:</strong> <%= detail["value"] %></li>
       <% end %>
     </ul>
   <% end %>
 
-  <%= form_with scope: :contact, url: contact_path, method: :post, class: "contact-form" do |form| %>
-    <div class="contact-field">
+  <%= form_with scope: :contact, url: contact_path, method: :post do |form| %>
+    <div>
       <%= form.label :name %>
       <%= form.text_field :name, value: @form_data["name"], required: true %>
     </div>
 
-    <div class="contact-field">
+    <div>
       <%= form.label :email %>
       <%= form.email_field :email, value: @form_data["email"], required: true %>
     </div>
 
-    <div class="contact-field">
+    <div>
       <%= form.label :message %>
       <%= form.text_area :message, value: @form_data["message"], rows: 6, required: true %>
     </div>
@@ -40,14 +40,14 @@
 
   <% if @contact["social"]&.any? %>
     <h2>Social</h2>
-    <ul class="contact-social">
+    <ul>
       <% @contact["social"].each do |link| %>
         <li><%= link_to link["label"], link["url"], target: "_blank", rel: "noopener" %></li>
       <% end %>
     </ul>
   <% end %>
 
-  <nav class="page-nav">
+  <nav>
     <%= link_to "About", "/about" %> |
     <%= link_to "Contact", "/contact" %> |
     <%= link_to "FAQ", "/faq" %>

@@ -1,11 +1,11 @@
 <% content_for :title, @page_title %>
 
-<section class="faq-page">
+<section>
   <h1><%= @faq["title"] %></h1>
   <p><%= @faq["intro"] %></p>
 
   <% if @faq["items"]&.any? %>
-    <ul class="faq-list">
+    <ul>
       <% @faq["items"].each do |item| %>
         <li>
           <strong><%= item["question"] %></strong>
@@ -15,7 +15,7 @@
     </ul>
   <% end %>
 
-  <nav class="page-nav">
+  <nav>
     <%= link_to "About", "/about" %> |
     <%= link_to "Contact", "/contact" %> |
     <%= link_to "FAQ", "/faq" %>

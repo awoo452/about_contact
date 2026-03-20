@@ -1,32 +1,32 @@
 <% content_for :title, @page_title %>
 
-<section class="about-page">
+<section>
   <h1><%= @about["title"] %></h1>
-  <p class="about-kicker"><%= @about["kicker"] %></p>
+  <p><%= @about["kicker"] %></p>
   <h2><%= @about["headline"] %></h2>
   <p><%= @about["lede"] %></p>
 
   <% if @about["badges"]&.any? %>
-    <ul class="about-badges">
+    <ul>
       <% @about["badges"].each do |badge| %>
         <li><%= badge %></li>
       <% end %>
     </ul>
   <% end %>
 
-  <div class="about-mission">
+  <div>
     <h2><%= @about.dig("mission", "title") %></h2>
     <p><%= @about.dig("mission", "body") %></p>
   </div>
 
-  <div class="about-vision">
+  <div>
     <h2><%= @about.dig("vision", "title") %></h2>
     <p><%= @about.dig("vision", "body") %></p>
   </div>
 
   <% if @about["highlights"]&.any? %>
     <h2>Highlights</h2>
-    <ul class="about-highlights">
+    <ul>
       <% @about["highlights"].each do |highlight| %>
         <li>
           <strong><%= highlight["title"] %></strong>
@@ -38,7 +38,7 @@
 
   <% if @about["sections"]&.any? %>
     <h2>More</h2>
-    <ul class="about-sections">
+    <ul>
       <% @about["sections"].each do |section| %>
         <li>
           <strong><%= section["title"] %></strong>
@@ -48,7 +48,7 @@
     </ul>
   <% end %>
 
-  <nav class="page-nav">
+  <nav>
     <%= link_to "About", "/about" %> |
     <%= link_to "Contact", "/contact" %> |
     <%= link_to "FAQ", "/faq" %>
