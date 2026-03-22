@@ -2,37 +2,29 @@
 
 Rails app for standard About, Contact, and FAQ pages with a working email form.
 
-## Pages
+## Features
+
 - `/` (root) renders About
 - `/about`
 - `/contact`
 - `/faq`
 
-## Content
+### Content
+
 All copy lives in `config/site_content.json`. Update the JSON and the pages will reflect it.
 
-## Setup
-```bash
-bin/setup
-```
+### Contact Form Email Setup
 
-## Run
-```bash
-bin/rails s
-```
+The contact form sends email via Action Mailer. It will show an error if delivery is not configured. At minimum, set `CONTACT_TO_EMAIL`.
 
-## Contact Form Email Setup
-The contact form sends email via Action Mailer. It will show an error if delivery
-is not configured. At minimum, set `CONTACT_TO_EMAIL`.
-
-Required
+Required:
 - `CONTACT_TO_EMAIL` (destination inbox)
 
-Optional
+Optional:
 - `CONTACT_FROM_EMAIL` (default `no-reply@example.com`)
 - `CONTACT_SUBJECT_PREFIX` (default `[Contact]`)
 
-SMTP (if you want real delivery)
+SMTP (if you want real delivery):
 - `SMTP_ADDRESS`
 - `SMTP_PORT` (default `587`)
 - `SMTP_DOMAIN`
@@ -41,7 +33,7 @@ SMTP (if you want real delivery)
 - `SMTP_AUTHENTICATION` (default `plain`)
 - `SMTP_ENABLE_STARTTLS_AUTO` (default `true`)
 
-Example environment setup
+Example environment setup:
 ```bash
 export CONTACT_TO_EMAIL="hello@example.com"
 export CONTACT_FROM_EMAIL="no-reply@example.com"
@@ -55,10 +47,21 @@ export SMTP_AUTHENTICATION="plain"
 export SMTP_ENABLE_STARTTLS_AUTO="true"
 ```
 
+## Setup
+
+1. `bin/setup`
+
+## Run
+
+1. `bin/rails s`
+
 ## Tests
-```bash
-bin/rails test
-bin/rails test:system
-```
+
+1. `bin/rails test`
+2. `bin/rails test:system`
 
 System tests run with `rack_test` for CI compatibility.
+
+## Changelog
+
+See [`CHANGELOG.md`](CHANGELOG.md) for notable changes.
